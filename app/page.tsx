@@ -575,8 +575,8 @@ export default function HomePage() {
                         Visit Our Office
                       </h3>
                       <p className="text-slate-600">
-                        288, Bhagat Singh Street, Naveena Garden, Brindavan
-                        Colony, Puducherry, 605013
+                        288, Bhagat Singh Street, Naveena Garden, Puducherry,
+                        605013
                       </p>
                     </div>
                   </div>
@@ -585,11 +585,30 @@ export default function HomePage() {
                 <div className="bg-slate-50 p-6 rounded-2xl">
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-slate-200 rounded-xl flex items-center justify-center">
-                      <Phone className="h-6 w-6 text-slate-700" />
+                      <a href="tel:+919843600607">
+                        <Phone className="h-6 w-6 text-slate-700 hover:text-slate-900 transition-colors" />
+                      </a>
                     </div>
                     <div>
                       <h3 className="font-bold text-slate-900 mb-2">Call Us</h3>
-                      <p className="text-slate-600">+91 98436 00607</p>
+                      <a
+                        href="tel:+919843600607"
+                        className="text-slate-600 block hover:underline"
+                      >
+                        +91 98436 00607
+                      </a>
+                      <a
+                        href="tel:+919843600662"
+                        className="text-slate-600 block hover:underline mt-2"
+                      >
+                        +91 98436 00662
+                      </a>
+                      <a
+                        href="tel:+04132910607"
+                        className="text-slate-600 block hover:underline mt-2"
+                      >
+                        +0413 2910607
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -614,7 +633,7 @@ export default function HomePage() {
               <div className="bg-gradient-to-r from-slate-900 to-slate-700 p-6 rounded-2xl text-white">
                 <h3 className="font-bold mb-3">Business Hours</h3>
                 <div className="space-y-2 text-slate-200">
-                  <p>Monday - Saturday: 9:00 AM - 7:00 PM</p>
+                  <p>Monday - Saturday: 9:00 AM - 9:00 PM</p>
                   <p>Sunday: 10:00 AM - 5:00 PM</p>
                 </div>
               </div>
