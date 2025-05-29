@@ -65,10 +65,12 @@ export default function HomePage() {
               Contact
             </Link>
           </nav>
-          <Button className="bg-slate-900 hover:bg-slate-800 text-white rounded-full px-6">
-            View Gallery
-            <ArrowRight className="w-5 h-5 ml-2" />
-          </Button>
+          <Link href="/projects">
+            <Button className="bg-slate-900 hover:bg-slate-800 text-white rounded-full px-6">
+              View Gallery
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </Link>
         </div>
       </header>
 
@@ -122,26 +124,40 @@ export default function HomePage() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  size="lg"
-                  className="bg-slate-900 hover:bg-slate-800 text-white rounded-full px-8 h-12"
-                >
-                  View Our Work
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
+                <Link href="/projects">
+                  <Button
+                    size="lg"
+                    className="bg-slate-900 hover:bg-slate-800 text-white rounded-full px-8 h-12"
+                  >
+                    View Our Work
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Button>
+                </Link>
               </div>
             </div>
 
             <div className="relative">
-              <div className="relative z-10">
-                <Image
-                  src="/sml-images/1.jpg"
-                  alt="Modern kitchen design showcase"
-                  width={600}
-                  height={700}
-                  className="rounded-3xl shadow-2xl"
-                />
+              <div className="relative z-10 w-full max-w-[600px] mx-auto">
+                <div className="relative w-full aspect-[6/7] overflow-hidden rounded-3xl shadow-2xl">
+                  {["/sml-images/1.jpg", "/img2.jpeg", "/img3.jpeg"].map(
+                    (src, index) => (
+                      <Image
+                        key={src}
+                        src={src}
+                        alt={`Interior design showcase ${index + 1}`}
+                        fill
+                        className="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000"
+                        style={{
+                          opacity: 0,
+                          animation: `carousel 9s infinite`,
+                          animationDelay: `${index * 3}s`,
+                        }}
+                      />
+                    )
+                  )}
+                </div>
               </div>
+
               <div className="absolute -top-6 -right-6 w-32 h-32 bg-gradient-to-r from-slate-200 to-gray-200 rounded-3xl -z-10"></div>
               <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-gradient-to-r from-slate-100 to-gray-100 rounded-3xl -z-10"></div>
 
@@ -694,16 +710,20 @@ export default function HomePage() {
                         className="min-h-[120px] rounded-xl border-slate-200"
                       />
                     </div>
-                    <a
-                      href="https://wa.me/919843600607"
-                      target="_blank"
-                      rel="noopener noreferrer"
+
+                    <Button
+                      asChild
+                      className="w-full bg-slate-900 hover:bg-slate-800 text-white h-12 rounded-xl text-lg font-semibold"
                     >
-                      <Button className="w-full bg-slate-900 hover:bg-slate-800 text-white h-12 rounded-xl text-lg font-semibold">
+                      <a
+                        href="https://wa.me/919843600607"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         Send Message
-                        <ArrowRight className="w-5 h-5 ml-2" />
-                      </Button>
-                    </a>
+                        <ArrowRight className="w-5 h-5 ml-2 inline" />
+                      </a>
+                    </Button>
                   </form>
                 </CardContent>
               </Card>

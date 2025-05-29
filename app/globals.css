@@ -92,3 +92,24 @@ body {
     @apply bg-background text-foreground;
   }
 }
+@keyframes carousel {
+  0%,
+  33% {
+    opacity: 1;
+  }
+  34%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes carousel {
+  0%,
+  33% {
+    opacity: 1;
+  }
+  34%,
+  100% {
+    opacity: 0;
+  }
+}
