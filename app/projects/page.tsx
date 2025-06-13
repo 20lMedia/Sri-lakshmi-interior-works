@@ -13,7 +13,7 @@ export default function ProjectsPage() {
 
   // Array of image paths from 1 to 107
   const images = Array.from(
-    { length: 259 },
+    { length: 263 },
     (_, i) => `/sml-images/${i + 1}.jpg`
   );
 
